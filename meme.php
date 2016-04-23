@@ -8,8 +8,7 @@
 
     echo "<p/>";
     echo "<img src=\"$filename\"><br/>";
-    echo count($sentences);
-
+ 
 
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
