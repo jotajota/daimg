@@ -4,18 +4,26 @@
     $sentences=getsentences();
     $caption=strtoupper($sentences[rand(0,count(sentences)-1)]);
 
-//    echo $caption;
-//    echo "<br>";
-//    echo $filename;
-//    echo "<br>";
-//    echo "<img src=\"$meme\"><br/>";
-//    echo $meme;
-
     exec ("/var/www/html/create.sh $meme $filename \"$caption\"");
 
-    echo "<p/>";
-    echo "<img src=\"$filename\"><br/>";
+<!DOCTYPE html>
+<html>
 
+<head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="main.css">
+    <title></title>
+</head>
+
+<body>
+
+        <?php echo "<img src=\"$filename\"><br/>"; ?>
+
+</body>
+
+</html>
+
+<?php
 
 
 function generateRandomString($length = 10) {
