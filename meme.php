@@ -2,9 +2,11 @@
     $meme="assets/memes/".rand(0,99).".png";
 	$filename="out/".generateRandomString()."png";
     $sentences=getsentences();
-    $caption=strtoupper($sentences[rand(0,count(sentences)-1)]);
+    $caption=strtoupper($sentences[rand(0,count($sentences)-1)]);
 
     exec ("/var/www/html/create.sh $meme $filename \"$caption\"");
+
+?>
 
 <!DOCTYPE html>
 <html>
