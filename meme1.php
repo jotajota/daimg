@@ -3,20 +3,29 @@
 	$filename="out/".generateRandomString().".png";
 	$meme="assets/memes/".rand(0,99).".png";
 
-#        echo $caption;
-#        echo "<br>";
-#        echo $filename;
-#        echo "<br>";
-#        echo "<img src=\"$meme\"><br/>";
-#        echo $meme;
-#	echo "<br>";
 	
     	exec ("/var/www/html/create.sh $meme $filename \"$caption\"");
 
-#	echo "/var/www/html/create.sh $meme $filename \"$caption\"";
-    	echo "<p/>";
-    	echo "<img src=\"$filename\"><br/>";
+?>
 
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="main.css">
+    <title></title>
+</head>
+
+<body>
+
+    	<?php echo "<img src=\"$filename\"><br/>"; ?>
+
+</body>
+
+</html>
+
+<?php
 
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
