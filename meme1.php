@@ -1,5 +1,5 @@
 <?php
-	$caption=$_POST["caption"];
+	$caption=strtoupper($_POST["caption"]);
 	$filename="out/".generateRandomString().".png";
 	$meme="assets/memes/".rand(0,99).".png";
 

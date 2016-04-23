@@ -2,7 +2,7 @@
     $meme="assets/memes/".rand(0,99).".png";
 	$filename="out/".generateRandomString()."png";
     $sentences=getsentences();
-    $caption=$sentences[rand(0,count(sentences)-1)];
+    $caption=strtoupper($sentences[rand(0,count(sentences)-1)]);
 
     exec ("/var/www/html/create.sh $meme $filename \"$caption\"");
 
@@ -43,7 +43,23 @@ function getsentences() {
             "El rey está preparado.",
             "Los Rolling Stones son incombustibles.",
             "Yo creo en dios, pero no en el de la Iglesia.",
-            "El rock ha muerto."
+            "El rock ha muerto.",
+            "españoles muy españoles y mucho españoles",
+            "Esto no es como el agua que cae del cielo sin que se sepa exactamente por qué",
+            "Un vaso es un vaso y un plato es un plato",
+            "Es el vecino el que elige el alcalde, y es el alcalde el que quiere que sean los vecinos el alcalde",
+            "Me gustan los catalanes porque hacen cosas",
+            "Una cosa es ser solidario, y otra es serlo a cambio de nada",
+            "Va a subir el IVA de los chuches",
+            "España es un gran país y tiene españoles",
+            "ETA es una gran nación",
+            "A veces la mejor decisión es no tomar ninguna decisión, que también es tomar una decisión",
+            "¿Y la europea?",
+            "Por las carreteras tienen que ir coches y de los aeropuertos tienen que salir aviones",
+            "Ni a Hitler ni a Stalin les han nombrado personas non grata en Pontevedra",
+            "Para mí, ser presidente del país es la pera",
+            "Yo trabajo al día 12 horas 40 minutos",
+            "Exportar es positivo porque vendes lo que produces"
             ];
     return $frases;
 }
