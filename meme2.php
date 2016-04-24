@@ -1,6 +1,6 @@
 <?php
 	$meme="assets/memes/".$_POST["meme"].".png";
-	$filename="out/".generateRandomString()."png";
+	$filename="out/".generateRandomString().".png";
     $sentences=getsentences();
     $caption=strtoupper($sentences[rand(0,count($sentences)-1)]);
 
