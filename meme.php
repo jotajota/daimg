@@ -1,8 +1,23 @@
 <?php
-    $meme="assets/memes/".rand(0,99).".png";
-	$filename="out/".generateRandomString().".png";
-    $sentences=getsentences();
-    $caption=strtoupper($sentences[rand(0,count($sentences)-1)]);
+    switch ($_POST["mode"]){
+        case 1:
+            $caption=escapeshellcmd(strtoupper($_POST["caption"]));
+            $meme="assets/memes/".rand(0,99).".png";
+            $filename="out/".generateRandomString().".png";
+        break;
+
+        case 2:
+            $caption=getsentence();
+            $meme="assets/memes/".$_POST["meme"].".png";
+            $filename="out/".generateRandomString().".png";
+        break;
+
+        case 3:
+            $caption=getsentence();
+            $meme="assets/memes/".rand(0,99).".png";
+            $filename="out/".generateRandomString().".png";
+        break;            
+    }
 
     exec ("/var/www/html/create.sh $meme $filename \"$caption\"");
 
@@ -20,7 +35,7 @@
 <body>
 
         <?php echo "<img src=\"$filename\"><br/>"; ?>
-
+        <?php echo "<center>Para compartir: <a href=\"$filename\">\"$filename\"</a></center>"; ?>
 </body>
 
 </html>
@@ -37,8 +52,8 @@ function generateRandomString($length = 10) {
     return $randomString;
 }
 
-function getsentences() {
-    $frases = [
+function getsentence() {
+    $sentences = [
             "El blanco combina con todo.",
             "La natación es el deporte más completo",
             "La gente más humilde es la más generosa",
@@ -77,7 +92,8 @@ function getsentences() {
             "Yo trabajo al día 12 horas 40 minutos",
             "Exportar es positivo porque vendes lo que produces"
             ];
-    return $frases;
+    $sentence=strtoupper($sentences[rand(0,count($sentences)-1)]);
+    return $sentence;
 }
 
 ?>
