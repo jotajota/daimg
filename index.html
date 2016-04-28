@@ -14,21 +14,24 @@
     <p>Finally, it can harness the whole power of AI and Deep Web Learning to render new pieces of knowledge<sup>(6)</sup>.</p>
     <p>All of this is presented as popular memes to better reach the Millennial generation. </p>
     <div class="content">
-        <form action="meme1.php" method="post">
+        <form action="meme.php" method="post">
             <h2>MODE ONE</h2>
             <label>Caption</label>
             <input type="text" name="caption"></input>
+            <input type="hidden" name="mode" value="1">
             <input type="submit"></input>
         </form>
-        <form action="meme2.php" method="post">
+        <form action="meme.php" method="post">
             <h2>MODE TWO</h2>
-            <label>Meme number</label>
+            <label>Meme number (0-99)</label>
             <input type="number" maxlength="2" max="99" name="meme"></input>
+            <input type="hidden" name="mode" value="2">
             <input type="submit"></input>
         </form>
         <form action="meme.php" method="post">
             <h2>MODE AUTO</h2>
             <label>Just push!</label>
+            <input type="hidden" name="mode" value="3">
             <input type="submit"></input>
         </form>
     </div>
